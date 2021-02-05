@@ -1,0 +1,16 @@
+enable: true
+
+
+faqItem:
+  - title : Can the Deep Learning Notebook work with Google Cloud or Microsoft Azure?
+    content : Currently the Deep Learning Notebook is only available on the AWS Marketplace.
+
+  - title : Do you provide security updates?
+    content : The software we provide is regularly updated with new security patches. When a new product version is released, it contains the latest OS and security patches.
+
+  - title : Do you provide free trials?
+    content : Some products are free under the AWS Free Tier, check the pricing page for the individual products for more information.
+
+  - title : Do you offer refunds?
+    content : Currently refunds are not offered for subscription products. Subscriptions are charged based on usage and you are free to cancel anytime based on AWS policies.
+  

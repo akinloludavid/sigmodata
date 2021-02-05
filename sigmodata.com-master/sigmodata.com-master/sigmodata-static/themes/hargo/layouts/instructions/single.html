@@ -1,0 +1,20 @@
+{{ define "main" }}
+
+<section class="section pt-0">
+  <div class="container">
+    <section class="section">
+      <div class="col-lg-12">
+        <div class="text-primary">{{ .Params.Title }}</div>
+        <h1 class="hero-text">{{ .Params.BigTitle }}</h1>
+      </div>
+    </section>
+
+    <div class="row">
+      <div class="col-12">
+        {{ .Content }}
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ end }}

@@ -1,0 +1,25 @@
+
+############################ banner ##########################
+banner:
+  title : "Fast-track your AI experiments with SigmoData's products"
+  content : "Deep learning is revolutionizing the enterprise, and SigmoData provides you with the tools and services to take advantage of this revolution."
+  image : "images/data-brain2.png"
+  # button
+  button:
+    enable : true
+    label : "All Products"
+    link : "products"
+
+########################## About ##############################
+about:
+  title : "About Our Solutions"
+  content : "Sigmodata offers Amazon AMIs and Sagemaker models that run in your environment. Learn more about our products to find out how to jump start your project."
+  image : "images/solution.jpg"
+
+
+mission:
+  title : "Our Mission"
+  content : "We are a small team of software engineers with experience in Big Data and Machine Learning. 
+  Our mission is to empower every data scientist and engineer to be more efficient and productive in their daily tasks.
+  The services and APIs we provide are designed to be simple yet powerful, and help make Machine Learning more accessible to everyone."
+  image : "images/mission.png"

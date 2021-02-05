@@ -1,0 +1,19 @@
+############################# contact info ################
+contact:
+  enable : true
+  # office
+  office:
+    title : "San Jose Office"
+    content : "Our San Jose office is currently remote only. For any information please see the FAQ or contact us at the address below."
+    # other information comes from "config.toml"
+
+  # opening hour
+  openingHour:
+    title : "Opening Hours"
+    dayTimeList:
+      - dayTime : "Monday-Friday: 9am-5pm"
+      # - dayTime : "Monday-Friday: 9am – 5pm"
+
+####################### google map ########################
+map:
+  enable: false

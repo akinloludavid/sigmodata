@@ -1,0 +1,62 @@
+{{ define "main" }}
+
+
+{{ with .Site.Data.homepage.banner }}
+<section class="section-sm pt-0" style = "margin-bottom: -20px;">
+  <div class="container-fluid px-0 front-banner">
+    <div class="container">
+      <div class="row justify-content-between align-items-center p-2" >
+        <div class="col-lg-6 col-md-6 order-2 order-md-1">
+          <h1 class="text-light">{{ .title | markdownify }}</h1>
+          <p>{{ .content | markdownify }}</p>
+          {{ with .button }}
+            <a href="{{ .link }}" class="btn btn-primary my-3">{{ .label }}</a>
+          {{ end }}
+          
+        </div>
+        <div class="col-lg-6 col-md-6 order-1 order-lg-2" style="text-align: center;">
+          <img width=450 src="{{ .image | absURL }}" class="img-fluid" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{ with .Site.Data.homepage.about }}
+<section class="section px-2 bg-light">
+  <div class="container">
+    <div class= "row justify-content-around align-items-center flex-box">
+      <div class="col-lg-5 col-md-6 order-2 order-md-1">
+        <img class="img-fluid" src="{{ .image | absURL }}" alt="">
+      </div>
+      <div class="col-md-6 col-lg-5 order-1 order-lg-2">
+        <h2>{{ .title | markdownify }}</h2>
+        <p>{{ .content | markdownify }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+
+
+
+{{ with .Site.Data.homepage.mission }}
+<section class="section pt-2 bg-light">
+  <div class="container">
+    <div class="row justify-content-around align-items-center flex-box">
+      <div class="col-md-6 col-lg-5 order-md-1">
+        <h2>{{ .title | markdownify }}</h2>
+        <p>{{ .content | markdownify }}</p>
+      </div>
+      <div class="col-lg-5 col-md-6 order-lg-2">
+        <img class="img-fluid" src="{{ .image | absURL }}" alt="">
+      </div>  
+    </div>
+  </div>
+</section>
+{{ end }}
+
+
+
+{{ end }}

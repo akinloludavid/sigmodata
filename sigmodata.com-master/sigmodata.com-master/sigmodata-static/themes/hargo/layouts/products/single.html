@@ -1,0 +1,51 @@
+{{ define "main" }}
+
+<section class="section pt-0">
+  <div class="container-fluid px-0">
+    <div class="container-fluid text-light product-banner" id="action-contaner">
+      <div class="container pb-5">
+        <section class="section bg-transparent">
+          <div class="col-lg-12">
+            <div class="text-white">{{ .Params.Title }}</div>
+            <h1 class="hero-text text-light">Product Description</h1>
+          </div>
+        </section>
+        <div class="row my-3">
+
+          <div class="col-lg-7 text-center test">
+            <img class="img-fluid" src="/products/deep-learning-notebook/images/logo.png" alt="">
+          </div>
+      
+          <div class="col-lg-5 ">
+            <div class="row product-description text-white">
+              <h3 class = "text-white font-weight-bold">Deep Learning AMI (Amazon Machine Image)</h3>
+              <h4 class = "text-white my-4">Start training your deep learning model in minutes.</h4>
+
+                <p>Packaged as an Amazon Machine Image and available on the AWS marketplace, this software will give you access to a [Jupyter Notebook](https://www.jupyter.org) enabled for interactive Python development, with the most popular data science and deep learning packages pre-installed.</p>
+              
+            </div>
+            <div class="row mt-3 text-center" style = "margin-top: 60px !important;">
+              <div class=" col-xs-6 mx-3">
+                <a href="{{ .Params.ProductLink }}" target="_blank" class="btn btn-primary" role="button">Get Product</a>
+              </div>
+              <div class="  col-xs-6">
+                <a href="{{ .Params.InstructionsLink }}" target="_blank" class="btn btn-primary" role="button">Instructions</a>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    
+    <div class="container-fluid bg-light" style = "margin-bottom: -50px";>
+      <div class="row text-left" style = "padding: 40px 120px;">
+        <div class="col-md-12 text-left">
+          {{ .Content }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ end }}
