@@ -3,7 +3,7 @@ title: "Deep Learning Notebook AMI"
 bigTitle: "Instructions"
 ---
 
-{{< figure src="images/1.png" class="ml-4 float-right border border-dark" width=550 >}}
+{{< figure src="images/1.png" class="ml-4 float-right border border-dark" width=450 height=280 >}}
 ### 1. Launch the AMI
 
 You can access the AMI listing page either from the AWS marketplace url or directly from the EC2 Console in the AWS Marketplace category.
@@ -16,7 +16,7 @@ On the marketplace AMI page, click on **"Continue to Subscribe"** and Accept to 
 You will get a confirmation and after a short period the product will be enabled for your account  
 
 
-{{< figure src="images/2.png" class="ml-4 float-right border border-dark" width=550 >}}
+{{< figure src="images/2.png" class="ml-4 float-right border border-dark" width=450 >}}
 ### 3. Launch a new instance of the AMI
 
 Select the region, vpc and your key pair settings. The configured security group has ports `tcp/8888` (jupyter notebook) and `tcp/22` (ssh) open by default.
@@ -46,7 +46,7 @@ Add SSL_CERT=/home/ec2-user/s3/path-to-cert.crt and SSL_KEY=/home/ec2-user/s3/pa
 This will let the instance load the certificate and private key.
 This can be useful if you don't want to use a self-signed certificate for the web server. -->
  
-{{< figure src="images/3.png" class="ml-4 float-right border border-dark" width=550 >}}
+{{< figure src="images/3.png" class="ml-4 float-right border border-dark" width=450 >}}
 ### 4. Connect to Jupyter
 
 After launching the instance, open the ec2 console to find out the IP address and the instance id (the instance id is the password in the jupyter login screen)
@@ -61,7 +61,7 @@ The AMI generates a self-signed SSL certificate in order to encrypt traffic betw
 
 Click `Advanced` and accept the security exception to continue.
 
-{{< figure src="images/4.png" class="ml-4 float-right border border-dark" width=550 >}}
+{{< figure src="images/4.png" class="ml-4 float-right border border-dark" width=450 >}}
 ### 6. Log in to Jupyter
 
 You should see the Jupyter Log in screen.

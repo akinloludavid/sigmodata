@@ -1,17 +1,108 @@
 {{ define "main" }}
 
-<section class="section pt-0">
+<section class="section pt-0 ">
   <div class="container">
-    <section class="section">
-      <div class="col-lg-12">
+    <section class="section bg-transparent">
+      <div class="col-lg-12 ">
         <div class="text-primary">{{ .Params.Title }}</div>
         <h1 class="hero-text">{{ .Params.BigTitle }}</h1>
       </div>
     </section>
 
-    <div class="row">
-      <div class="col-12">
+    <!--<div class="row">
+      <div class="col-md-12">
         {{ .Content }}
+      </div>
+    </div>-->
+
+
+    <div class="instructions">
+      <div class="row col-12">
+        <div class="col-md-5">
+          <h3>1. Launch the AMI</h3>
+          <p>You can access the AMI listing page either from the AWS marketplace url or directly from the EC2 Console in the AWS Marketplace category.
+          On the marketplace AMI page, click on **"Continue to Subscribe"** and Accept to enable the AMI for your account. Note that subscribing does not incur charges on your account. It simply allows you to access the AMI.</p>
+
+          <h3>2. Access to the AMI is now enabled for your account</h3>
+          <p>You will get a confirmation and after a short period the product will be enabled for your account. </p>
+        </div>
+
+        <div class = "col-md-7 card border border-dark">
+          <img class = "img-fluid" src="./images/1.png" alt="" width = "100%">
+        </div>
+      </div>
+
+
+      <div class="row my-4">
+        <div class="col-md-5 ">
+          <h3>3. Launch a new instance of the AMI</h3>
+          <p>Select the region, vpc and your key pair settings. The configured security group has ports `tcp/8888` (jupyter notebook) and `tcp/22` (ssh) open by default.</p>
+          <p>When selecting the EC2 instance type, if you select a `p2.*` or `p3.*` instance, those come with GPUs, and the AMI will automatically configure the required drivers and packages to enable Tensorflow and Pytorch to take advantage of the GPU acceleration.</p>
+          <p>For more information on how to configure EC2 instances, refer to the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/launching-instance.html">Amazon Documentation</a></p>
+
+        </div>
+
+        <div class = "col-md-7 card border border-dark">
+          <img class = "img-fluid" src="./images/2.png" alt="" width = "100%">
+        </div>
+
+        <div class="addInfo" style = "padding: 20px;">
+          <h3>(Optional) Enable S3 and/or custom SSL certificates</h3>
+          <p><strong>This step is optional.</strong></p>
+          <p>The AMI supports custom configuration enabled by changing the instance's `user data` at launch time. </p>
+          <p>When configuring the launch settings, look for the <strong>User Data section</strong>. You can set user data when configuring the instance to enable the following options:</p>
+
+           <strong>S3 Access:</strong> If you wish to persist your notebooks to long-term storage, you can use <a href="https://aws.amazon.com/s3/?hp=tile&so-exp=below">Amazon S3</a> as storage backend for Jupyter
+           
+           <ul>
+             <li>When configuring the launch, add this line to the user-data field: `S3_BUCKET=your-s3-bucket-name`</li>
+             <li>You also need to assign an <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html">IAM role</a> with S3 permissions to your instance.</li>
+             <li>The instance will then mount the S3 bucket as the notebook directory during boot. Notebooks will be saved and loaded from the S3 bucket.</li>
+             <li>This is useful to persist your notebooks as otherwise the AMI data is lost when terminating the instance.</li>
+           </ul>
+          </div>
+      </div>
+
+       <div class="row col-12">
+        <div class="col-md-5">
+          <div>
+              <h3>4. Connect to Jupyter</h3>
+              <p>After launching the instance, open the ec2 console to find out the IP address and the instance id (the instance id is the password in the jupyter login screen)</p>
+              <ul>
+                <li>Note the ip address of the instance (`instance-ip`)</li>
+                <li>Note the instance id (ex `i-1edca67e90cbhdef0`). <strong>This is your Jupyter password to log in to your instance</strong></li>
+                <li>Browse to `https://<instance-ip>:8888` (replace `<instance-ip>` with your instance's ip. ex: 102.52.12.44)</li>
+                
+              </ul>
+          </div>
+          <h3>5. Accept the SSL certificate warning</h3>
+          <p>You should see an SSL certificate warning.</p>
+
+          <p>The AMI generates a self-signed SSL certificate in order to encrypt traffic between your browser and the Jupyter server. Because the certificate is <strong>self-signed</strong> and was not certified by a <strong>Certificate Authority (CA)</strong>, your browser will show a warning. 
+
+          Click `Advanced` and accept the security exception to continue.</p>
+        </div>
+
+        <div class = "col-md-7 card border border-dark">
+          <img class = "img-fluid" src="./images/3.png" alt="" width = "100%">
+        </div>
+      </div>
+
+      <div class="row col-12 my-5">
+        <div class="col-md-5">
+          <h3>6. Log in to Jupyter</h3>
+          <p>You should see the Jupyter Log in screen.</p>
+          <p>Use <strong>your instance id</strong> as the Jupyter password to log in. You can find your instance id in the EC2 console.</p>
+
+          <h3>7. Start coding</h3>
+          <p>You should now be in the Jupyter environment. You can create a new notebook and start coding
+
+            If you still need help, please contact <a href="mailto:support@sigmodata.com">support@sigmodata.com</a></p>
+        </div>
+
+        <div class = "col-md-7 card border border-dark">
+          <img class = "img-fluid" src="./images/4.png" alt="" width = "100%">
+        </div>
       </div>
     </div>
   </div>
